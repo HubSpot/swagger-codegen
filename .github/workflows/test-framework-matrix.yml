@@ -63,7 +63,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Download codegen cli
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.3
         with:
           name: codegen-cli
       - name: generate
@@ -127,13 +127,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.3
         with:
           name: generated_${{ env.JOB_NAME }}
           # todo replace with job output
           path: generated/${{ env.JOB_NAME }}
       - name: Download logs
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.3
         with:
           name: generate_logs_${{ env.JOB_NAME }}
           #path: ${{ env.JOB_NAME }}.build.log
